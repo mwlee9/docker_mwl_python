@@ -1,4 +1,4 @@
-FROM python:3.7.7 as compile-image
+FROM python:3.10.1 as compile-image
 
 ### Set Pyspark Python Paths so that Driver and Executor are consistent
 ENV PYTHONPATH=/usr/bin/python3.7
@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 ########################################################################################
 ### Change to the slim image to save on space - ONLY RECOMMENDED FOR STANDALONE PY APPS, according to Python Docker Repo.
-FROM python:3.7.7-slim AS build-image
+FROM python:3.10.1-slim AS build-image
 
 ### Set the venv to path
 ENV PATH="/opt/venv/bin:$PATH"
