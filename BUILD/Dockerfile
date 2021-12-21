@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 ########################################################################################
 ### Change to the slim image to save on space - ONLY RECOMMENDED FOR STANDALONE PY APPS, according to Python Docker Repo.
-FROM python:3.7.7-slim AS build-image
+FROM python:3.7.7 AS build-image
 
 ### Set the venv to path
 ENV PATH="/opt/venv/bin:$PATH"
